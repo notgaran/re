@@ -11,7 +11,7 @@ const techStack = [
 const projects = [
   {
     title: '급식 잔반 확인',
-    period: '2023.03 ~ 2023.06',
+    period: '2023.07',
     stack: ['Python', 'OpenCV'],
     role: 'AI 모델 개발',
     desc: '이미지 인식으로 잔반량 자동 측정',
@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: '알츠키퍼',
-    period: '2022.09 ~ 2022.12',
+    period: '2023.12',
     stack: ['Java', 'Android'],
     role: '앱 개발',
     desc: '치매 예방 게임 및 알림 앱',
@@ -29,7 +29,7 @@ const projects = [
   },
   {
     title: '전자석 번호판',
-    period: '2022.05 ~ 2022.07',
+    period: '2024.06',
     stack: ['Arduino', 'C++'],
     role: '임베디드 개발',
     desc: '전자석을 이용한 차량 번호판 자동 전환',
@@ -38,7 +38,7 @@ const projects = [
   },
   {
     title: '젤리 분류',
-    period: '2021.11 ~ 2022.01',
+    period: '2024.07',
     stack: ['Python', 'TensorFlow'],
     role: 'AI 모델 개발',
     desc: '젤리 이미지 분류 딥러닝 모델',
@@ -52,11 +52,11 @@ const awards = [
   { year: '2023', desc: 'K TECH 개근상, 예절상 수상' },
 ];
 
-const activities = [
-  { year: '2023', desc: '교내 SW 동아리 회장' },
-  { year: '2022', desc: '외부 오픈소스 프로젝트 기여' },
-  { year: '2021', desc: '교내 알고리즘 스터디' },
-];
+// const activities = [
+//   { year: '2023', desc: '교내 SW 동아리 회장' },
+//   { year: '2022', desc: '외부 오픈소스 프로젝트 기여' },
+//   { year: '2021', desc: '교내 알고리즘 스터디' },
+// ];
 
 // --- Render Functions ---
 function renderTechStack() {
@@ -93,12 +93,12 @@ function renderAwards() {
   `).join('');
 }
 
-function renderActivities() {
-  const list = document.getElementById('activities');
-  list.innerHTML = '<h3>활동</h3>' + activities.map(a => `
-    <div class="activity-item glass"><b>${a.year}</b> - ${a.desc}</div>
-  `).join('');
-}
+// function renderActivities() {
+//   const list = document.getElementById('activities');
+//   list.innerHTML = '<h3>활동</h3>' + activities.map(a => `
+//     <div class="activity-item glass"><b>${a.year}</b> - ${a.desc}</div>
+//   `).join('');
+// }
 
 // --- Animations on Scroll ---
 function animateOnScroll() {
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTechStack();
   renderProjects();
   renderAwards();
-  renderActivities();
+  // renderActivities();
   animateOnScroll();
   navScrollHighlight();
   projectButtonAnimation();
