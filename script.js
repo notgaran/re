@@ -52,6 +52,17 @@ const awards = [
   { year: '2023', desc: 'K TECH 개근상, 예절상 수상' },
 ];
 
+const certificates = [
+  { name: '코딩자격증 3급', issuer: '한국산업인력공단', year: '2024' },
+  { name: '코딩자격증 4급', issuer: '한국산업인력공단', year: '2024' },
+  { name: '정보처리기능사', issuer: '한국산업인력공단', year: '2024' },
+  { name: '컴퓨터활용능력 2급', issuer: '대한상공회의소', year: '2024' },
+  { name: 'ITQ 한글', issuer: '대한상공회의소', year: '2024' },
+  { name: 'ITQ 엑셀', issuer: '대한상공회의소', year: '2024' },
+  { name: 'ITQ 파워포인트', issuer: '대한상공회의소', year: '2024' },
+  { name: 'GTQi', issuer: '한국생산성본부', year: '2024' },
+];
+
 // const activities = [
 //   { year: '2023', desc: '교내 SW 동아리 회장' },
 //   { year: '2022', desc: '외부 오픈소스 프로젝트 기여' },
@@ -93,6 +104,17 @@ function renderAwards() {
   `).join('');
 }
 
+function renderCertificates() {
+  const list = document.getElementById('certificates-list');
+  list.innerHTML = certificates.map(c => `
+    <div class="certificate-item glass">
+      <div class="certificate-name">${c.name}</div>
+      <div class="certificate-issuer">${c.issuer}</div>
+      <div class="certificate-year">${c.year}</div>
+    </div>
+  `).join('');
+}
+
 // function renderActivities() {
 //   const list = document.getElementById('activities');
 //   list.innerHTML = '<h3>활동</h3>' + activities.map(a => `
@@ -110,7 +132,7 @@ function animateOnScroll() {
     });
   }, { threshold: 0.15 });
 
-  document.querySelectorAll('.section, .tech-card, .project-card, .award-item, .activity-item, .contact-card').forEach(el => {
+  document.querySelectorAll('.section, .tech-card, .project-card, .award-item, .activity-item, .contact-card, .certificate-item').forEach(el => {
     observer.observe(el);
   });
 }
@@ -168,6 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTechStack();
   renderProjects();
   renderAwards();
+  renderCertificates();
   // renderActivities();
   animateOnScroll();
   navScrollHighlight();
