@@ -172,10 +172,4 @@ document.addEventListener('DOMContentLoaded', () => {
   animateOnScroll();
   navScrollHighlight();
   projectButtonAnimation();
-
-  // Fake PDF download
-  document.getElementById('download-pdf').addEventListener('click', e => {
-    e.preventDefault();
-    alert('PDF 다운로드는 준비 중입니다!');
-  });
 }); 
